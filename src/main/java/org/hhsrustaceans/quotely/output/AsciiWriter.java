@@ -46,6 +46,10 @@ public class AsciiWriter implements OutputWriter {
 
         if (component instanceof OptionComponent) {
             name = String.format("+ %s", name);
+
+            if (((OptionComponent) component).getOption().isGreen()) {
+                name = String.format("%s 🍃", name);
+            }
         }
 
         return new Object[]{

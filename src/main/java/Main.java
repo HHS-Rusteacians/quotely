@@ -15,7 +15,8 @@ public class Main {
         components.add(new PriceComponent("Component 1", 1.0));
         components.add(new PriceComponent("Component 2", 2.0));
         components.add(new PriceComponent("Component 3", 3.0));
-        components.add(new OptionComponent(new Option("Option 1", 4.0)));
+        components.add(new OptionComponent(new Option("Option 1", 4.0, false)));
+        components.add(new OptionComponent(new Option("Option 2", 5.0, true)));
 
         Quote quote = new Quote(client, components);
         OutputWriter writer = new AsciiWriter();

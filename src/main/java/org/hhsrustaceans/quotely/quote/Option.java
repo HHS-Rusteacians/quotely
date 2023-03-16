@@ -3,9 +3,10 @@ package org.hhsrustaceans.quotely.quote;
 import lombok.Getter;
 
 public class Option {
-    public Option(String name, double price) {
+    public Option(String name, double price, boolean isGreen) {
         this.name = name;
         this.price = price;
+        this.isGreen = isGreen;
     }
 
     @Getter
@@ -13,4 +14,7 @@ public class Option {
 
     @Getter
     private double price;
+
+    @Getter
+    private boolean isGreen;
 }
