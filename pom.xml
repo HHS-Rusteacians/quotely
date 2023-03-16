@@ -20,6 +20,12 @@
             <artifactId>j-text-utils</artifactId>
             <version>0.3.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <repositories>
