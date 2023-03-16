@@ -1,18 +1,19 @@
 package org.hhsrustaceans.quotely.quote;
 
 import lombok.Getter;
+import org.hhsrustaceans.quotely.quote.component.Component;
 
 import java.util.List;
 
 public class Quote {
-    public Quote(Client client, List<PriceComponent> priceComponents) {
+    public Quote(Client client, List<Component> components) {
         this.client = client;
-        this.priceComponents = priceComponents;
+        this.components = components;
     }
 
     @Getter
     private Client client;
     
     @Getter
-    private List<PriceComponent> priceComponents;
+    private List<Component> components;
 }

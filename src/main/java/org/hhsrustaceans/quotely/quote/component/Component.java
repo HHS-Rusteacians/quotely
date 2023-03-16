@@ -1,9 +1,9 @@
-package org.hhsrustaceans.quotely.quote;
+package org.hhsrustaceans.quotely.quote.component;
 
 import lombok.Getter;
 
-public class PriceComponent {
-    public PriceComponent(String name, double value) {
+public abstract class Component {
+    public Component(String name, double value) {
         this.name = name;
         this.value = value;
     }
