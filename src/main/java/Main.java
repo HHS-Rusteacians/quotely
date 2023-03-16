@@ -17,6 +17,6 @@ public class Main {
 
         Quote quote = new Quote(client, components);
         OutputWriter writer = new AsciiWriter();
-        writer.write(quote);
+        writer.write(System.out, quote);
     }
 }

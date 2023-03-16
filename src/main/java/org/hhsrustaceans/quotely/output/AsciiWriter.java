@@ -4,11 +4,13 @@ import dnl.utils.text.table.TextTable;
 import org.hhsrustaceans.quotely.quote.PriceComponent;
 import org.hhsrustaceans.quotely.quote.Quote;
 
+import java.io.PrintStream;
+
 public class AsciiWriter implements OutputWriter {
     @Override
-    public void write(Quote quote) {
-        System.out.println(quote.getClient().getName());
-        System.out.println("Quote");
+    public void write(PrintStream writer, Quote quote) {
+        writer.println(quote.getClient().getName());
+        writer.println("Quote");
 
         TextTable table = new TextTable(
                 new String[]{"Name", "Price"},
@@ -18,10 +20,10 @@ public class AsciiWriter implements OutputWriter {
 
         table.printTable();
 
-        System.out.println();
-        System.out.printf("Total: %.2f", quote.getPriceComponents().stream().mapToDouble(
+        writer.println();
+        writer.printf("Total: %.2f", quote.getPriceComponents().stream().mapToDouble(
                 PriceComponent::getValue
         ).sum());
-        System.out.println();
+        writer.println();
     }
 }
