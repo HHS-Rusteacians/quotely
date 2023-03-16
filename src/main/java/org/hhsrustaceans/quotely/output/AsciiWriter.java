@@ -4,6 +4,7 @@ import dnl.utils.text.table.TextTable;
 import org.hhsrustaceans.quotely.quote.component.Component;
 import org.hhsrustaceans.quotely.quote.component.OptionComponent;
 import org.hhsrustaceans.quotely.quote.Quote;
+import org.hhsrustaceans.quotely.quote.component.PriceComponent;
 
 import java.io.PrintStream;
 
@@ -13,29 +14,43 @@ public class AsciiWriter implements OutputWriter {
         writer.println(quote.getClient().getName());
         writer.println("Quote");
 
+        Object[][] components = quote.getComponents().stream()
+                .sorted((a, b) -> {
+                    if (a instanceof PriceComponent && b instanceof OptionComponent) {
+                        return -1;
+                    }
+                    if (a instanceof OptionComponent && b instanceof PriceComponent) {
+                        return 1;
+                    }
+                    return 0;
+                })
+                .map(this::getRow)
+                .toArray(Object[][]::new);
+
         TextTable table = new TextTable(
                 new String[]{"Name", "Price"},
-                quote.getComponents().stream().map(
-                        component -> {
-                            Object[] row = new Object[]{
-                                    component.getName(),
-                                    String.format("%.2f", component.getValue())
-                            };
+                components
+        );
 
-                            if(component instanceof OptionComponent) {
-                                row[0] = "- " + row[0];
-                            }
-
-                            return row;
-                        }
-                ).toArray(Object[][]::new));
-
-        table.printTable();
+        table.printTable(writer, 0);
 
         writer.println();
         writer.printf("Total: %.2f", quote.getComponents().stream().mapToDouble(
                 Component::getValue
         ).sum());
         writer.println();
+    }
+
+    private Object[] getRow(Component component) {
+        String name = component.getName();
+
+        if (component instanceof OptionComponent) {
+            name = String.format("+ %s", name);
+        }
+
+        return new Object[]{
+                name,
+                String.format("%.2f", component.getValue())
+        };
     }
 }
