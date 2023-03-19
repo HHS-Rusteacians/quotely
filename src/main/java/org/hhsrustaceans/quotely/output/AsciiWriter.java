@@ -29,7 +29,7 @@ public class AsciiWriter implements OutputWriter {
                 .toArray(Object[][]::new);
 
         TextTable table = new TextTable(
-                new String[]{"Name", "Price"},
+                new String[]{"Name", String.format("Price (%s)", quote.getCurrency().getSymbol())},
                 components
         );
 
