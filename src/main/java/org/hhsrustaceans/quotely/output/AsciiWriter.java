@@ -11,8 +11,9 @@ import java.io.PrintStream;
 public class AsciiWriter implements OutputWriter {
     @Override
     public void write(PrintStream writer, Quote quote) {
-        writer.println(quote.getClient().getName());
-        writer.println("Quote");
+        writer.printf("Quote for %s%n", quote.getClient().getName());
+        writer.printf("Created on %s%n", quote.getCreationDate());
+        writer.printf("Due for %s%n", quote.getDueDate());
 
         Object[][] components = quote.getComponents().stream()
                 .sorted((a, b) -> {

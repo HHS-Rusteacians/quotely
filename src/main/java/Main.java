@@ -5,7 +5,10 @@ import org.hhsrustaceans.quotely.quote.component.Component;
 import org.hhsrustaceans.quotely.quote.component.OptionComponent;
 import org.hhsrustaceans.quotely.quote.component.PriceComponent;
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +21,10 @@ public class Main {
         components.add(new OptionComponent(new Option("Option 1", 4.0, false)));
         components.add(new OptionComponent(new Option("Option 2", 5.0, true)));
 
-        Quote quote = new Quote(client, components);
+        Date creationDate = Date.from(Instant.now());
+        Date dueDate = Date.from(Instant.now().plus(14, ChronoUnit.DAYS));
+
+        Quote quote = new Quote(client, creationDate, dueDate, components);
         OutputWriter writer = new AsciiWriter();
         writer.write(System.out, quote);
     }
