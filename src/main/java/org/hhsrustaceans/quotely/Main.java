@@ -1,3 +1,5 @@
+package org.hhsrustaceans.quotely;
+
 import org.hhsrustaceans.quotely.output.OutputWriter;
 import org.hhsrustaceans.quotely.output.AsciiWriter;
 import org.hhsrustaceans.quotely.quote.Client;
