@@ -5,6 +5,8 @@ import org.hhsrustaceans.quotely.quote.component.Component;
 import org.hhsrustaceans.quotely.quote.component.OptionComponent;
 import org.hhsrustaceans.quotely.quote.Quote;
 import org.hhsrustaceans.quotely.quote.component.PriceComponent;
+import org.hhsrustaceans.quotely.quote.options.Category;
+import org.hhsrustaceans.quotely.quote.options.Option;
 
 import java.io.PrintStream;
 
@@ -29,7 +31,11 @@ public class AsciiWriter implements OutputWriter {
                 .toArray(Object[][]::new);
 
         TextTable table = new TextTable(
-                new String[]{"Name", String.format("Price (%s)", quote.getCurrency().getSymbol())},
+                new String[]{
+                        "Name",
+                        String.format("Price (%s)", quote.getCurrency().getSymbol()),
+                        "Category"
+                },
                 components
         );
 
@@ -44,18 +50,23 @@ public class AsciiWriter implements OutputWriter {
 
     private Object[] getRow(Component component) {
         String name = component.getName();
+        Category category = null;
 
         if (component instanceof OptionComponent) {
             name = String.format("+ %s", name);
 
-            if (((OptionComponent) component).getOption().isGreen()) {
+            Option option = ((OptionComponent) component).getOption();
+            category = option.getCategory();
+
+            if (option.isGreen()) {
                 name = String.format("%s 🍃", name);
             }
         }
 
         return new Object[]{
                 name,
-                String.format("%.2f", component.getValue())
+                String.format("%.2f", component.getValue()),
+                category
         };
     }
 }

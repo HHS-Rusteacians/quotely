@@ -1,7 +1,7 @@
 package org.hhsrustaceans.quotely.quote.component;
 
 import lombok.Getter;
-import org.hhsrustaceans.quotely.quote.Option;
+import org.hhsrustaceans.quotely.quote.options.Option;
 
 public class OptionComponent extends Component {
     public OptionComponent(Option option) {
