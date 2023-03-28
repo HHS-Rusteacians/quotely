@@ -12,8 +12,9 @@ public class RandomCheck implements DealCheck {
         List<Deal> deals = new ArrayList<>();
 
         if (Math.random() < 0.5) {
-            deals.add(new DealPercentage("Lucky lucky!", 60.0));
+            deals.add(new DealPercentage("Lucky lucky!", 70.0));
         }
+
         return deals;
     }
 }
