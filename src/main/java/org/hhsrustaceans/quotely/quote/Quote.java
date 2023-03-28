@@ -2,6 +2,7 @@ package org.hhsrustaceans.quotely.quote;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hhsrustaceans.quotely.quote.client.Client;
 import org.hhsrustaceans.quotely.quote.component.Component;
 
 import java.time.Instant;
