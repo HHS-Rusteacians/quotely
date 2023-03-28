@@ -65,7 +65,7 @@ public class AsciiWriter implements OutputWriter {
 
         return new Object[]{
                 name,
-                String.format("%.2f", component.getValue()),
+                String.format("%.2f", component.getDeductedValue()),
                 category
         };
     }

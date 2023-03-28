@@ -34,8 +34,12 @@ public abstract class Component {
         return deduction;
     }
 
-    private double getDeductedValue() {
+    public double getDeductedValue() {
         return this.value - getDeduction();
+    }
+
+    public void addDeals(List<Deal> deals) {
+        this.deals.addAll(deals);
     }
 
     @Getter
