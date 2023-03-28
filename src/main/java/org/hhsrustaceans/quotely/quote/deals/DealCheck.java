@@ -1,7 +1,6 @@
-package org.hhsrustaceans.quotely.quote.deals.checks;
+package org.hhsrustaceans.quotely.quote.deals;
 
 import org.hhsrustaceans.quotely.quote.client.Client;
-import org.hhsrustaceans.quotely.quote.deals.Deal;
 
 import java.util.List;
 

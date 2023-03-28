@@ -1,10 +1,8 @@
 package org.hhsrustaceans.quotely.quote.deals;
 
-import org.hhsrustaceans.quotely.quote.Quote;
 import org.hhsrustaceans.quotely.quote.client.Client;
 import org.hhsrustaceans.quotely.quote.client.ClientType;
 import org.hhsrustaceans.quotely.quote.component.Component;
-import org.hhsrustaceans.quotely.quote.deals.checks.DealCheck;
 import org.hhsrustaceans.quotely.quote.deals.checks.NonprofitCheck;
 import org.hhsrustaceans.quotely.quote.deals.checks.RandomCheck;
 
