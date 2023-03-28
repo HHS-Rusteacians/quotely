@@ -7,15 +7,18 @@ public class Client {
     @Getter
     @Setter
     private String name;
-    private ClientType client_type;
+
+    @Getter
+    @Setter
+    private ClientType type;
 
     public Client() {
         this.name = "Buy&Large";
-        this.client_type = ClientType.BUSINESS;
+        this.type = ClientType.BUSINESS;
     }
 
-    public Client(String name, ClientType client_type) {
+    public Client(String name, ClientType type) {
         this.name = name;
-        this.client_type = client_type;
+        this.type = type;
     }
 }

@@ -40,4 +40,8 @@ public class Quote {
     public void addComponent(Component component) {
         this.components.add(component);
     }
+
+    public void removeComponent(Component component){
+        this.components.remove(component);
+    }
 }
