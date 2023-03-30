@@ -4,7 +4,7 @@ import org.hhsrustaceans.quotely.quote.client.Client;
 import org.hhsrustaceans.quotely.quote.client.ClientType;
 import org.hhsrustaceans.quotely.quote.deals.Deal;
 import org.hhsrustaceans.quotely.quote.deals.DealCheck;
-import org.hhsrustaceans.quotely.quote.deals.DealPercentage;
+import org.hhsrustaceans.quotely.quote.deals.types.DealPercentage;
 
 import java.util.ArrayList;
 import java.util.List;

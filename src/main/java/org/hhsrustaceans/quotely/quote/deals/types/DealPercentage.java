@@ -1,6 +1,7 @@
-package org.hhsrustaceans.quotely.quote.deals;
+package org.hhsrustaceans.quotely.quote.deals.types;
 
 import lombok.Getter;
+import org.hhsrustaceans.quotely.quote.deals.Deal;
 
 public class DealPercentage extends Deal {
     @Getter

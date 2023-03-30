@@ -2,7 +2,6 @@ package org.hhsrustaceans.quotely;
 
 import org.hhsrustaceans.quotely.output.OutputWriter;
 import org.hhsrustaceans.quotely.output.AsciiWriter;
-import org.hhsrustaceans.quotely.quote.client.ClientType;
 import org.hhsrustaceans.quotely.quote.component.Component;
 import org.hhsrustaceans.quotely.quote.deals.DealManager;
 import org.hhsrustaceans.quotely.quote.options.Category;
@@ -15,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         Quote quote = new Quote();
         Category essentials = new Category("essentials", "Essentials");
-        DealManager dealManager = new DealManager();
+        DealManager dealManager = new DealManager(quote.getClient());
 
         quote.addComponent(new PriceComponent("Component 1", 1.0));
         quote.addComponent(new PriceComponent("Component 2", 2.0));

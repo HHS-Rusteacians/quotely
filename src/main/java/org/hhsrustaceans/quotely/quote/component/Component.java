@@ -35,7 +35,11 @@ public abstract class Component {
     }
 
     public double getDeductedValue() {
-        return this.value - getDeduction();
+        return this.value - this.getDeduction();
+    }
+
+    public boolean hasDeduction() {
+        return this.getDeduction() > 0.0;
     }
 
     public void addDeals(List<Deal> deals) {
