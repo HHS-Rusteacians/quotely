@@ -24,7 +24,7 @@ public abstract class Component {
     @Getter
     private double value;
 
-    private double getDeduction() {
+    public double getDeduction() {
         double deduction = 0.0;
 
         for (Deal deal: this.deals) {

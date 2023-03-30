@@ -42,15 +42,26 @@ public class AsciiWriter implements OutputWriter {
         table.printTable(writer, 0);
 
         writer.println();
-        writer.printf("Total: %.2f", quote.getComponents().stream().mapToDouble(
+        writer.printf("Sub total: %.2f%n", quote.getComponents().stream().mapToDouble(
                 Component::getValue
         ).sum());
-        writer.println();
+        writer.printf("Total: %.2f%n", quote.getComponents().stream().mapToDouble(
+                Component::getDeductedValue
+        ).sum());
+    }
+
+    private String formatPrice(double price) {
+        return String.format("%.2f", price);
     }
 
     private Object[] getRow(Component component) {
         String name = component.getName();
+        String price = formatPrice(component.getDeductedValue());
         Category category = null;
+
+        if (component.hasDeduction()) {
+            price = String.format("%s (-%s)", price, formatPrice(component.getDeduction()));
+        }
 
         if (component instanceof OptionComponent) {
             name = String.format("+ %s", name);
@@ -65,7 +76,7 @@ public class AsciiWriter implements OutputWriter {
 
         return new Object[]{
                 name,
-                String.format("%.2f", component.getDeductedValue()),
+                price,
                 category
         };
     }
