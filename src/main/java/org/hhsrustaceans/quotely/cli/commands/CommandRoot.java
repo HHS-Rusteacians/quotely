@@ -1,20 +1,24 @@
 package org.hhsrustaceans.quotely.cli.commands;
 
 import picocli.CommandLine.Command;
-import java.util.concurrent.Callable;
+import picocli.CommandLine.Spec;
+import picocli.CommandLine.Model.CommandSpec;
+import picocli.CommandLine.ParameterException;
 
 @Command(
     name = "quotely",
     description = "A simple and efficient quotation generation system that scales.",
     mixinStandardHelpOptions = true,
+    synopsisSubcommandLabel = "<COMMAND>",
     subcommands = {
         CommandGenerate.class
     }
 )
-public class CommandRoot implements Callable<Integer> {
+public class CommandRoot implements Runnable {
+    @Spec CommandSpec spec;
+
     @Override
-    public Integer call() {
-        System.err.println("No command specified.");
-        return 1;
+    public void run() {
+        throw new ParameterException(spec.commandLine(), "Missing required subcommand");
     }
 }
