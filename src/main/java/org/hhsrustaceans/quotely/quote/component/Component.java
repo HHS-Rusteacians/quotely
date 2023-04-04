@@ -1,7 +1,7 @@
 package org.hhsrustaceans.quotely.quote.component;
 
 import lombok.Getter;
-import org.hhsrustaceans.quotely.quote.deals.Deal;
+import org.hhsrustaceans.quotely.quote.adjustment.ValueAdjustment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,28 +24,32 @@ public abstract class Component {
     @Getter
     private double value;
 
-    public double getDeduction() {
-        double deduction = 0.0;
+    public double getAdjustment() {
+        double total_adjustment = 0.0;
 
-        for (Deal deal: this.deals) {
-            deduction += deal.getDeduction(this.value);
+        for (ValueAdjustment adjustment: this.deals) {
+            total_adjustment += adjustment.getAdjustment(this.value);
         }
 
-        return deduction;
+        return total_adjustment;
     }
 
-    public double getDeductedValue() {
-        return this.value - this.getDeduction();
+    public double getAdjustedValue() {
+        return this.value - this.getAdjustment();
     }
 
     public boolean hasDeduction() {
-        return this.getDeduction() > 0.0;
+        return this.getAdjustment() > 0.0;
     }
 
-    public void addDeals(List<Deal> deals) {
-        this.deals.addAll(deals);
+    public boolean hasIncrease() {
+        return this.getAdjustment() < 0.0;
+    }
+
+    public void addDeals(List<ValueAdjustment> adjustments) {
+        this.deals.addAll(adjustments);
     }
 
     @Getter
-    private List<Deal> deals;
+    private List<ValueAdjustment> deals;
 }

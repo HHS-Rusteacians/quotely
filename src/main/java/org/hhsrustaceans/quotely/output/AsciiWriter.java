@@ -46,7 +46,7 @@ public class AsciiWriter implements OutputWriter {
                 Component::getValue
         ).sum());
         writer.printf("Total: %.2f%n", quote.getComponents().stream().mapToDouble(
-                Component::getDeductedValue
+                Component::getAdjustedValue
         ).sum());
     }
 
@@ -56,11 +56,13 @@ public class AsciiWriter implements OutputWriter {
 
     private Object[] getRow(Component component) {
         String name = component.getName();
-        String price = formatPrice(component.getDeductedValue());
+        String price = formatPrice(component.getAdjustedValue());
         Category category = null;
 
         if (component.hasDeduction()) {
-            price = String.format("%s (-%s)", price, formatPrice(component.getDeduction()));
+            price = String.format("%s (-%s)", price, formatPrice(component.getAdjustment()));
+        } else if (component.hasIncrease()) {
+            price = String.format("%s (+%s)", price, formatPrice(component.getAdjustment()));
         }
 
         if (component instanceof OptionComponent) {
