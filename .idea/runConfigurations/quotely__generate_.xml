@@ -1,7 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="quotely" type="Application" factoryName="Application">
+  <configuration default="false" name="quotely (generate)" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
     <option name="MAIN_CLASS_NAME" value="org.hhsrustaceans.quotely.Main" />
     <module name="quotely" />
+    <option name="PROGRAM_PARAMETERS" value="generate" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
