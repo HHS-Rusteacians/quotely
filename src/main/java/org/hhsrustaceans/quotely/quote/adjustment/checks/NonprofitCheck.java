@@ -14,7 +14,7 @@ public class NonprofitCheck implements AdjustmentCheck {
         List<ValueAdjustment> deals = new ArrayList<>();
 
         if (client.getType().equals(ClientType.NONPROFIT)) {
-            deals.add(new AdjustmentPercentage("Nonprofit discount", 10.0));
+            deals.add(new AdjustmentPercentage("Nonprofit discount", -10.0));
         }
 
         return deals;
