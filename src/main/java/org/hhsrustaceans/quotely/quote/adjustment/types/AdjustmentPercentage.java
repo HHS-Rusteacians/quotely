@@ -14,6 +14,6 @@ public class AdjustmentPercentage extends ValueAdjustment {
 
     @Override
     public double getAdjustment(double value) {
-        return (value / 100) * (this.percentage + 100.0);
+        return (value / 100) * this.percentage;
     }
 }
