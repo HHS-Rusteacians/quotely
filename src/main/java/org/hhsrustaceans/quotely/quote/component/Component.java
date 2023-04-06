@@ -35,15 +35,15 @@ public abstract class Component {
     }
 
     public double getAdjustedValue() {
-        return this.value - this.getAdjustment();
+        return this.value + this.getAdjustment();
     }
 
     public boolean hasDeduction() {
-        return this.getAdjustment() > 0.0;
+        return this.getAdjustment() < 0.0;
     }
 
     public boolean hasIncrease() {
-        return this.getAdjustment() < 0.0;
+        return this.getAdjustment() > 0.0;
     }
 
     public void addDeals(List<ValueAdjustment> adjustments) {

@@ -60,7 +60,7 @@ public class AsciiWriter implements OutputWriter {
         Category category = null;
 
         if (component.hasDeduction()) {
-            price = String.format("%s (-%s)", price, formatPrice(component.getAdjustment()));
+            price = String.format("%s (%s)", price, formatPrice(component.getAdjustment()));
         } else if (component.hasIncrease()) {
             price = String.format("%s (+%s)", price, formatPrice(component.getAdjustment()));
         }
