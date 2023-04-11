@@ -1,6 +1,5 @@
 package org.hhsrustaceans.quotely.cli.converters;
 
-import org.hhsrustaceans.quotely.quote.options.Category;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
