@@ -1,2 +1,12 @@
-client: Example Client
+orderNumber: A0
+clientName: ShipWrecks
 currency: EUR
+Quote:
+  - component: sail
+    price: 400
+    category: stewing mechanism
+    environmentallyFriendly: true
+  - component: engine + propeller
+    price: 700
+    category: stewing mechanism
+    environmentallyFriendly: false
