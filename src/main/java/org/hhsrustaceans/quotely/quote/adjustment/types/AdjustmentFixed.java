@@ -14,6 +14,6 @@ public class AdjustmentFixed extends ValueAdjustment {
 
     @Override
     public double getAdjustment(double value) {
-        return this.value;
+        return value - this.value;
     }
 }
