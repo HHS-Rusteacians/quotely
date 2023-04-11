@@ -5,15 +5,15 @@ import org.hhsrustaceans.quotely.quote.adjustment.ValueAdjustment;
 
 public class AdjustmentFixed extends ValueAdjustment {
     @Getter
-    private double value;
+    private double adjustment;
 
-    public AdjustmentFixed(String name, double value) {
+    public AdjustmentFixed(String name, double adjustment) {
         super(name);
-        this.value = value;
+        this.adjustment = adjustment;
     }
 
     @Override
     public double getAdjustment(double value) {
-        return value - this.value;
+        return value - this.adjustment;
     }
 }
