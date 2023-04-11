@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 public class NonprofitCheckTest {
+//    Checken of de client een nonprofit is voor kortingen
     @Test
     public void testNonprofitEligibility() {
         List<ValueAdjustment> adjustments = new NonprofitCheck().getAdjustments(new Client("Test", ClientType.NONPROFIT));
