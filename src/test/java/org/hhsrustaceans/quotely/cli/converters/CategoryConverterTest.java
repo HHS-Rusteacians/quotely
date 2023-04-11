@@ -2,23 +2,23 @@ package org.hhsrustaceans.quotely.cli.converters;
 
 import org.hhsrustaceans.quotely.quote.options.Category;
 import org.junit.jupiter.api.Assertions;
-import picocli.CommandLine;
+import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class CategoryConverterTest {
 
-    public void testCategoryConverter() throws Exception {
+    @Test
+    public void testCategoryConverter() {
 
-//        CategoryConverter categoryConverter = new CategoryConverter();
-//        Category category = new Category("motor", "Motor");
-
-//        Assertions.
-
-
-//        Assertions.assertDoesNotThrow(CommandLine.TypeConversionException.class, categoryConverter.convert("motor;Motor"));
-
+        CategoryConverter categoryConverter = new CategoryConverter();
+        try {
+            //test if the converter can convert a string to a category
+            Assertions.assertDoesNotThrow(() -> categoryConverter.convert("Motor"));
+        } catch (Exception e) {
+            //throw an exception if the string is not converted to a category
+            Assertions.assertThrows(Exception.class, () -> categoryConverter.convert("Not a category"));
+            e.printStackTrace();
+        }
     }
 
 }
