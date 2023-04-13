@@ -65,7 +65,7 @@ public class AsciiWriter implements OutputWriter {
         ).sum()*1.21);
     }
 
-    private String formatPrice(double price) {
+    protected String formatPrice(double price) {
         return String.format("%.2f", price);
     }
 
