@@ -29,10 +29,13 @@ public class AsciiWriter implements OutputWriter {
                 })
                 .sorted((a, b) -> {  // Sort OptionComponents by their categories
                     if (a instanceof OptionComponent && b instanceof OptionComponent) {
-                        String category_a = ((OptionComponent) a).getOption().getCategory().getName();
-                        String category_b = ((OptionComponent) b).getOption().getCategory().getName();
+                        Category category_a = ((OptionComponent) a).getOption().getCategory();
+                        Category category_b = ((OptionComponent) b).getOption().getCategory();
 
-                        return category_a.compareTo(category_b);
+                        if (category_a == null) {return -1;}
+                        if (category_b == null) {return 1;}
+
+                        return category_a.getName().compareTo(category_b.getName());
                     }
                     return 0;
                 })
