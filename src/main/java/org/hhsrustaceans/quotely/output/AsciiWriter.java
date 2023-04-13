@@ -18,12 +18,21 @@ public class AsciiWriter implements OutputWriter {
         writer.printf("Due for %s%n", quote.getDueDate());
 
         Object[][] components = quote.getComponents().stream()
-                .sorted((a, b) -> {
+                .sorted((a, b) -> { // Sort PriceComponents and OptionComponents
                     if (a instanceof PriceComponent && b instanceof OptionComponent) {
                         return -1;
                     }
                     if (a instanceof OptionComponent && b instanceof PriceComponent) {
                         return 1;
+                    }
+                    return 0;
+                })
+                .sorted((a, b) -> {  // Sort OptionComponents by their categories
+                    if (a instanceof OptionComponent && b instanceof OptionComponent) {
+                        String category_a = ((OptionComponent) a).getOption().getCategory().getName();
+                        String category_b = ((OptionComponent) b).getOption().getCategory().getName();
+
+                        return category_a.compareTo(category_b);
                     }
                     return 0;
                 })
