@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="quotely (generate with currency = null)" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="org.hhsrustaceans.quotely.Main" />
+    <module name="quotely" />
+    <option name="PROGRAM_PARAMETERS" value="generate -N Shipflex --category-id essentials --category-name &quot;The Essentials&quot; -o Engine -p 1000 -o Propeller -p 2500 -c essentials --green" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
