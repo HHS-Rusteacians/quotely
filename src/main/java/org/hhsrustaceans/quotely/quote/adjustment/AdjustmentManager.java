@@ -25,7 +25,7 @@ public class AdjustmentManager {
 
         // Check customer adjustments
         for (AdjustmentCheck check: checks) {
-            adjustments.addAll(check.getAdjustments(quote.getClient()));
+            adjustments.addAll(check.getAdjustments(quote));
         }
 
         return adjustments;

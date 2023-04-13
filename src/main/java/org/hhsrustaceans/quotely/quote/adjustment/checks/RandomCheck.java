@@ -1,6 +1,6 @@
 package org.hhsrustaceans.quotely.quote.adjustment.checks;
 
-import org.hhsrustaceans.quotely.quote.client.Client;
+import org.hhsrustaceans.quotely.quote.Quote;
 import org.hhsrustaceans.quotely.quote.adjustment.AdjustmentCheck;
 import org.hhsrustaceans.quotely.quote.adjustment.ValueAdjustment;
 import org.hhsrustaceans.quotely.quote.adjustment.types.AdjustmentPercentage;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RandomCheck implements AdjustmentCheck {
-    public List<ValueAdjustment> getAdjustments(Client client) {
+    public List<ValueAdjustment> getAdjustments(Quote quote) {
         List<ValueAdjustment> deals = new ArrayList<>();
 
         if (Math.random() < 0.5) {
