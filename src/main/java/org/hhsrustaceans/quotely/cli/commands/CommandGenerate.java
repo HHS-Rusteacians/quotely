@@ -55,7 +55,7 @@ public class CommandGenerate implements Runnable {
             quote.addComponent(new OptionComponent(option));
         }
 
-        AdjustmentManager adjustmentManager = new AdjustmentManager(quote.getClient());
+        AdjustmentManager adjustmentManager = new AdjustmentManager(quote);
         for (Component component : quote.getComponents()) {
             adjustmentManager.applyAdjustments(component);
         }
