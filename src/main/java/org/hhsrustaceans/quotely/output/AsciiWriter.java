@@ -57,6 +57,9 @@ public class AsciiWriter implements OutputWriter {
         writer.printf("Total: %.2f%n", quote.getComponents().stream().mapToDouble(
                 Component::getAdjustedValue
         ).sum());
+        writer.printf("Total plus 21%% VAT : %.2f%n", quote.getComponents().stream().mapToDouble(
+                Component::getAdjustedValue
+        ).sum()*1.21);
     }
 
     private String formatPrice(double price) {
