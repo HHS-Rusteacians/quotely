@@ -1,12 +1,15 @@
-orderNumber: A0
-clientName: ShipWrecks
-currency: EUR
-Quote:
-  - component: sail
-    price: 400
-    category: stewing mechanism
-    environmentallyFriendly: true
-  - component: engine + propeller
-    price: 700
-    category: stewing mechanism
-    environmentallyFriendly: false
+client:
+  name: John Doe
+  email: john.doe@example.com
+creationDate: 2023-04-13T09:30:00Z
+dueDate: 2023-04-27T09:30:00Z
+components:
+  - name: Component 1
+    description: Description of component 1
+    quantity: 2
+    unitPrice: 10.00
+  - name: Component 2
+    description: Description of component 2
+    quantity: 1
+    unitPrice: 20.00
+currency: USD
