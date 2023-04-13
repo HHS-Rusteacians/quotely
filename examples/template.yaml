@@ -1,15 +1,18 @@
 client:
   name: John Doe
-  email: john.doe@example.com
+  type: BUSINESS
+currency: USD
 creationDate: 2023-04-13T09:30:00Z
 dueDate: 2023-04-27T09:30:00Z
-components:
+OptionComponent:
   - name: Component 1
-    description: Description of component 1
-    quantity: 2
-    unitPrice: 10.00
-  - name: Component 2
-    description: Description of component 2
-    quantity: 1
-    unitPrice: 20.00
-currency: USD
+    value: 10.00
+    option:
+      name: Option 1
+      price: 5.00
+      category: CATEGORY1
+      isGreen: true
+    deals:
+      - name: deal1
+        adjustment: 5.00
+        percentage: 0.5

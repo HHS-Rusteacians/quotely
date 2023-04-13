@@ -1,9 +1,6 @@
 package org.hhsrustaceans.quotely.output;
+
 import org.hhsrustaceans.quotely.quote.Quote;
-import org.hhsrustaceans.quotely.quote.component.Component;
-import org.hhsrustaceans.quotely.quote.component.PriceComponent;
-import org.hhsrustaceans.quotely.output.AsciiWriter;
-import org.hhsrustaceans.quotely.cli.commands.CommandGenerate;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
