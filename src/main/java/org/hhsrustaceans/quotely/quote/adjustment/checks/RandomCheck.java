@@ -21,7 +21,9 @@ public class RandomCheck implements AdjustmentCheck {
 
         if (Math.random() < 0.5) {
             deals.add(new AdjustmentPercentage("Lucky lucky!", -2.0));
-        } else {
+        }
+
+        else {
             deals.add(new AdjustmentPercentage("Pandemic inflation", 20.0));
         }
 
