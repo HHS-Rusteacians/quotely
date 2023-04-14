@@ -17,25 +17,25 @@ import java.util.List;
 
 /**
  * Creates a command that generates a quote.
- * @Command(name = "generate", description = "Generate a quote.")
- * @see picocli.CommandLine.Command;
+ * @CommandInfo name = "generate", description = "Generate a quote."
  * It contains 2 arguments that is used for setting the quote value.
+ * @see picocli.CommandLine.Command;
  */
 @Command(name = "generate", description = "Generate a quote.")
 public class CommandGenerate implements Runnable {
 
     /**
-     * @CommandLine.Option(names = "-N", description = "The name of the client.", required = true)
-     * @see picocli.CommandLine.Option;
+     * @CommandInfo names = "-N", description = "The name of the client.", required = true
      * It is used for setting the name of the client.
+     * @see picocli.CommandLine.Option;
      */
     @CommandLine.Option(names = "-N", description = "The name of the client.", required = true)
     private String clientName;
 
     /**
-     * @CommandLine.Option(names = "--currency", description = "The currency to use for the quote.")
-     * @see picocli.CommandLine.Option;
+     * names = "--currency", description = "The currency to use for the quote.")
      * It is used for setting the currency of the quote.
+     * @see picocli.CommandLine.Option;
      */
     @CommandLine.Option(names = "--currency", description = "The currency to use for the quote.")
     private Currency currency;
@@ -49,9 +49,9 @@ public class CommandGenerate implements Runnable {
     private List<Category> categories;
 
     /**
-     * @CommandLine.ArgGroup(exclusive = false, multiplicity = "0..*")
-     * @see picocli.CommandLine.ArgGroup;
+     * @CommandInfo exclusive = false, multiplicity = "0..*"
      * It is used for setting the options of the quote.
+     * @see picocli.CommandLine.ArgGroup;
      */
     @CommandLine.ArgGroup(exclusive = false, multiplicity = "0..*")
     private List<Option> options;
@@ -92,8 +92,10 @@ public class CommandGenerate implements Runnable {
             quote.addComponent(new OptionComponent(option));
         }
 
+        // It will create a new AdjustmentManager and apply the adjustments.
         AdjustmentManager adjustmentManager = new AdjustmentManager(quote);
 
+        // A for loop that iterates through the components and applies the adjustments.
         for (Component component : quote.getComponents()) {
             adjustmentManager.applyAdjustments(component);
         }

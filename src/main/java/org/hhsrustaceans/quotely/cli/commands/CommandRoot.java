@@ -10,13 +10,12 @@ import picocli.CommandLine.ParameterException;
  *
  * It contains 5 arguments that is used for setting the quote value for the client.
  * @Command annotation is used to create a command that is used to generate a quote.
- * @see picocli.CommandLine.Command;
- *
  * name = "quotely" is used to set the name of the command.
  * description = "A simple and efficient quotation generation system that scales." is used to set the description of the command.
  * mixinStandardHelpOptions = true is used to set the help option.
  * synopsisSubcommandLabel = "<COMMAND>" is used to set the subcommand label.
  * subcommands = { CommandGenerate.class } is used to set the subcommands.
+ * @see picocli.CommandLine.Command;
  */
 @Command(
     name = "quotely",
@@ -31,8 +30,8 @@ import picocli.CommandLine.ParameterException;
 public class CommandRoot implements Runnable {
     /**
      * @Spec CommandSpec spec;
-     * @see picocli.CommandLine.Spec;
      * It is used to set the command specification.
+     * @see picocli.CommandLine.Spec;
      */
     @Spec CommandSpec spec;
 

@@ -2,7 +2,9 @@ package org.hhsrustaceans.quotely.quote.client;
 
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * Client class which represents a client of the company.
+ */
 public class Client {
     @Getter
     @Setter

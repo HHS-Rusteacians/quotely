@@ -10,7 +10,16 @@ import org.hhsrustaceans.quotely.quote.options.Option;
 
 import java.io.PrintStream;
 
+/**
+ * Output the quote in a simple ASCII table. This is the default output format.
+ * @see OutputWriter
+ */
 public class AsciiWriter implements OutputWriter {
+    /**
+     * Write the quote to the given writer.
+     * @param writer The writer to write to.
+     * @param quote The quote to write.
+     */
     @Override
     public void write(PrintStream writer, Quote quote) {
         writer.printf("Quote for %s%n", quote.getClient().getName());
