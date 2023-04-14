@@ -5,7 +5,6 @@ import picocli.CommandLine;
 
 public class Main {
     public static void main(String[] args) {
-        int statusCode = new CommandLine(new CommandRoot()).execute(args);
-        System.exit(statusCode);
+        System.exit(new CommandLine(new CommandRoot()).execute(args));
     }
 }
