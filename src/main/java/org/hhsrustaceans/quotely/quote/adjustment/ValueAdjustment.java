@@ -2,6 +2,9 @@ package org.hhsrustaceans.quotely.quote.adjustment;
 
 import lombok.Getter;
 
+/**
+ * A class ValueAdjustment that receives a name argument.
+ */
 public abstract class ValueAdjustment {
     @Getter
     private String name;

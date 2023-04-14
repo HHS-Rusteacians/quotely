@@ -3,7 +3,9 @@ package org.hhsrustaceans.quotely.quote.adjustment.types;
 import lombok.Getter;
 import org.hhsrustaceans.quotely.quote.adjustment.ValueAdjustment;
 
-// A class AdjustmentPercentage that extends the ValueAdjustment class that receives a price argument.
+/** A class AdjustmentPercentage that extends the ValueAdjustment class that receives a price argument.
+ * @see ValueAdjustment;
+ */
 public class AdjustmentPercentage extends ValueAdjustment {
     @Getter
     private double percentage;

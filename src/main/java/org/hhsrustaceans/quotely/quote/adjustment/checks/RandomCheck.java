@@ -8,7 +8,9 @@ import org.hhsrustaceans.quotely.quote.adjustment.types.AdjustmentPercentage;
 import java.util.ArrayList;
 import java.util.List;
 
-// A class RandomCheck that randomly generates a discount by a change of 50%.
+/** A class RandomCheck that randomly generates a discount by a change of 50%.
+ * @see Quote;
+ */
 public class RandomCheck implements AdjustmentCheck {
     /**
      * Randomly generates a discount by a change of 50%.

@@ -9,7 +9,9 @@ import org.hhsrustaceans.quotely.quote.adjustment.types.AdjustmentPercentage;
 import java.util.ArrayList;
 import java.util.List;
 
-// A class NonprofitCheck that checks if there is a nonprofit discount to apply.
+/** A class NonprofitCheck that checks if there is a nonprofit discount to apply.
+ * @see Quote;
+ */
 public class NonprofitCheck implements AdjustmentCheck {
     /**
      * Checks if there is a nonprofit discount to apply.

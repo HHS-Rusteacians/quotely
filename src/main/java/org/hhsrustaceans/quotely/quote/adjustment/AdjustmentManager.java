@@ -7,7 +7,9 @@ import org.hhsrustaceans.quotely.quote.adjustment.checks.*;
 import java.util.ArrayList;
 import java.util.List;
 
-// A class that receives a quote and a List of AdjustmentCheck and returns a list of ValueAdjustments.
+/** A class that receives a quote and a List of AdjustmentCheck and returns a list of ValueAdjustments.
+ * @see Quote;
+ */
 public class AdjustmentManager {
     private Quote quote;
 
